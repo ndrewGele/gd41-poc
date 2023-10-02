@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://deq14sc20nlxv"]
+
+[ext_resource type="PackedScene" uid="uid://ct6g857saisg7" path="res://characters/test.tscn" id="1_x4nwr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cjw7c"]
+size = Vector3(50, 1, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5wfpr"]
+size = Vector3(50, 1, 8)
+
+[node name="TestStage" type="Node3D"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.616398, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_cjw7c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_5wfpr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.90525, 0.424879, 0, -0.424879, 0.90525, 0, 6.5501, 0)
+shadow_enabled = true
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.02005, 15.7725)
+
+[node name="Camera3D" type="Camera3D" parent="Marker3D"]
+
+[node name="TestChar" parent="." instance=ExtResource("1_x4nwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08517, 0)
