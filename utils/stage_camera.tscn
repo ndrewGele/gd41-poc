@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://vo2a70bm3qku"]
+
+[node name="stage_camera" type="Marker3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
